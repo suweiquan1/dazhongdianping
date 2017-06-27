@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+.animate{
+    animation: 0.5s linear;
+}
+
+@keyframes xiahua {
+    0%{transform: translateY(-15rem)}
+    100%{transform: translateY(0rem)}
+}
+
+.xiahua{
+    animation-name: xiahua;
+}
+
+@keyframes zuohua {
+    0%{transform: translateX(-15rem)}
+    100%{transform: translateX(0rem)}
+}
+
+.zuohua{
+    animation-name: zuohua;
+}
+
+@keyframes jiantouyidong {
+    0%{transform: translateY(0);opacity: 0}
+    100%{transform: translateY(-2rem);opacity: 1}
+}
+
+.jiantouyidong{
+    animation: jiantouyidong 0.7s ease infinite;
+}
+
+@keyframes shanghua {
+    0%{transform: translateY(10rem)}
+    100%{transform: translateY(0rem)}
+}
+
+.shanghua{
+    animation: shanghua 0.5s linear;
+}
+
+@keyframes youhua {
+    0%{transform: translateX(10rem)}
+    100%{transform: translateX(0rem)}
+}
+
+.youhua{
+    animation: youhua 0.5s linear;
+}
+
+@keyframes xiatiaodong {
+    0%{transform: translateY(-10rem);opacity: 0}
+    50%{transform: translateY(2rem)}
+    70%{transform: translateY(-3rem)}
+    100%{transform: translateY(0rem);opacity: 1}
+}
+
+.xiatiaodong{
+    animation: xiatiaodong 1s linear;
+}
+
+@keyframes suofang {
+    0%{transform: scale(0);opacity: 0}
+    100%{transform: scale(1);opacity: 1}
+}
+
+.suofang{
+    animation: suofang 0.6s linear;
+}
+
+@keyframes xuanzhuan {
+    0%{transform: rotateX(80deg)}
+    100%{transform: rotateX(0deg)}
+}
+
+.xuanzhuan{
+    animation: xuanzhuan 1s linear;
+}
+
+@keyframes xuanzhuan1 {
+    0%{transform: rotateX(-88deg)}
+    100%{transform: rotateX(0deg)}
+}
+
+.xuanzhuan1{
+    animation: xuanzhuan1 1s linear;
+}
