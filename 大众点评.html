@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <script src="js/fontsize.js"></script>
+    <link rel="stylesheet" href="css/大众点评.css"/>
+    <link rel="stylesheet" href="css/大众点评动画.css"/>
+</head>
+<body>
+
+<div class="page page1">
+    <div>
+        <img src="img/cover.png" alt="" class="pic1 moveToDown animated"/>
+        <img src="img/wording_cover.png" alt="" class="pic2 moveToRight animated"/>
+    </div>
+</div>
+<div class="page page2 pageDown">
+    <div class="hide subPage page2_1">
+        <img src="img/wording.png" alt="" class="pic1 animated1 shanghua"/>
+        <img src="img/floating_develop.png" alt="" class="pic2 animated1 suofang"/>
+        <img src="img/circle.png" alt="" class="pic3 animated xiatiaodong"/>
+        <img src="img/people.png" alt="" class="pic4 animated1 zuohua"/>
+        <img src="img/check_develop.png" alt="" class="pic5 animated1 suofang"/>
+    </div>
+    <div class="hide subPage page2_2 pageRight">
+        <img src="img/introduction.png" alt="" class="pic11"/>
+        <img src="img/btn_develop.png" alt="" class="pic22"/>
+    </div>
+</div>
+<div class="page page3 pageDown">
+    <div class="hide subPage page3_1">
+        <img src="img/wording_design.png" alt="" class="pic1 animated1 shanghua"/>
+        <img src="img/floating_design.png" alt="" class="pic2 animated1 suofang"/>
+        <img src="img/circle-design.png" alt="" class="pic3 animated xiatiaodong"/>
+        <img src="img/people_design.png" alt="" class="pic4 animated2 shanghua"/>
+        <img src="img/check_design.png" alt="" class="pic5 animated1 suofang"/>
+    </div>
+    <div class="hide subPage page3_2 pageRight">
+        <img src="img/introduction_design.png" alt="" class="pic11"/>
+        <img src="img/btn_design.png" alt="" class="pic22"/>
+    </div>
+</div>
+<div class="page page4 pageDown">
+    <div class="hide subPage page4_1">
+        <img src="img/wording_production.png" alt="" class="pic1 animated1 shanghua"/>
+        <img src="img/floating_production.png" alt="" class="pic2 animated1 suofang"/>
+        <img src="img/circle-production.png" alt="" class="pic3 animated xiatiaodong"/>
+        <img src="img/people_production.png" alt="" class="pic4 animated1 youhua"/>
+        <img src="img/check_production.png" alt="" class="pic5 animated1 suofang"/>
+    </div>
+    <div class="hide subPage page4_2 pageRight">
+        <img src="img/introduction_production.png" alt="" class="pic11"/>
+        <img src="img/btn_production.png" alt="" class="pic22"/>
+    </div>
+</div>
+<div class="page page5 pageDown">
+    <div class="hide">
+        <img src="img/pic_back.png" alt="" class="pic1 animated xiazhuan"/>
+        <img src="img/btn_join.png" alt="" class="pic2 animated shangzhuan"/>
+    </div>
+</div>
+
+<div class="arrow arrowUp animated infinite"></div>
+
+</body>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/touch.min.js"></script>
+<script>
+    // 当期页码
+    var i=0;
+    // 总页数
+    var count=$(".page").length-1;
+
+    $("body").swipeUp(
+            function(){
+                if(i<count){
+                    $(".page").eq(i).addClass("pageUp");
+                    $(".page").eq(i).children().addClass("hide");
+                    i++;
+                    $(".page").eq(i).removeClass("pageDown");
+                    $(".page").eq(i).children().removeClass("hide");
+                }
+            }
+    );
+    $("body").swipeDown(
+            function(){
+                if(i>0){
+                    $(".page").eq(i).addClass("pageDown");
+                    $(".page").eq(i).children().addClass("hide");
+                    i--;
+                    $(".page").eq(i).removeClass("pageUp");
+                    $(".page").eq(i).children().removeClass("hide");
+                }
+            }
+    );
+
+    $(".page2,.page3,.page4").swipeLeft(
+            function(){
+                $(this).children("div").eq(0).addClass("pageLeft");
+                $(this).children("div").eq(1).removeClass("pageRight");
+            }
+    );
+    $(".page2,.page3,.page4").swipeRight(
+            function(){
+                $(this).children("div").eq(0).removeClass("pageLeft");
+                $(this).children("div").eq(1).addClass("pageRight");
+            }
+    );
+</script>
+
+</html>
